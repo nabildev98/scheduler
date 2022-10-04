@@ -10,7 +10,6 @@ const dayListItems = props.days.map(day => {
   spots={day.spots}
   selected={day.name === props.day}
   setDay={props.setDay}>
-
   </DayListItem>
 })
   return (
