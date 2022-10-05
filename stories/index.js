@@ -12,6 +12,8 @@ import Header from "components/Appointment/Header";
 import Empty from "components/Appointment/Empty";
 import Show from "components/Appointment/Show";
 import Confirm from "components/Appointment/Confirm";
+import Status from "components/Appointment/Status";
+import Error from "components/Appointment/Error";
 
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
@@ -153,3 +155,5 @@ storiesOf("InterviewerList", module)
   .add("Empty", () => <Empty onAdd={action("onAdd")}/>)
   .add("Show", () => <Show onEdit={action('onEdit')} onDelete={action('onDelete')} interviewer="Sylvia Plath" student="Julia Child" />)
   .add("Confirm", () => <Confirm onConfirm={action('onConfirm')} onCancel={action('onCancel')} message="Delete the appointment?" /> )
+  .add("Status", () => <Status message="Deleting" />)
+  .add("Error", () => <Error message="Could not delete appointment." onClose={action('onClose')} />)
