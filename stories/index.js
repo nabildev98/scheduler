@@ -11,6 +11,7 @@ import Appointment from "components/Appointment/index.js";
 import Header from "components/Appointment/Header";
 import Empty from "components/Appointment/Empty";
 import Show from "components/Appointment/Show";
+import Confirm from "components/Appointment/Confirm";
 
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
@@ -151,3 +152,4 @@ storiesOf("InterviewerList", module)
   .add("Header", () => <Header time="12pm" />) 
   .add("Empty", () => <Empty onAdd={action("onAdd")}/>)
   .add("Show", () => <Show onEdit={action('onEdit')} onDelete={action('onDelete')} interviewer="Sylvia Plath" student="Julia Child" />)
+  .add("Confirm", () => <Confirm onConfirm={action('onConfirm')} onCancel={action('onCancel')} message="Delete the appointment?" /> )
