@@ -158,20 +158,20 @@ storiesOf("InterviewerList", module)
   .add("Confirm", () => <Confirm onConfirm={action('onConfirm')} onCancel={action('onCancel')} message="Delete the appointment?" /> )
   .add("Status", () => <Status message="Deleting" />)
   .add("Error", () => <Error message="Could not delete appointment." onClose={action('onClose')} />)
-  .add("Edit", () => (
-    <Form
-     student="Nabil Ahmed"
-     interviewer={4}
-     interviewers={interviewers}
-     onSave={action('onSave')}
-     onCancel={action('onCancel')}
-     />
-     ))
   .add("Create", () => (
     <Form
-      interviewers={interviewers}
-      onSave={action("onSave")}
-      onCancel={action("onCancel")}
-      />
-  ))
+    interviewers={interviewers}
+    onSave={action("onSave")}
+    onCancel={action("onCancel")}
+    />
+    ))
+    .add("Edit", () => (
+      <Form
+       student="Nabil Ahmed"
+       interviewer={4}
+       interviewers={interviewers}
+       onSave={action('onSave')}
+       onCancel={action('onCancel')}
+       />
+       ))
   
