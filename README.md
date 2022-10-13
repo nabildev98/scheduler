@@ -1,5 +1,19 @@
 # Interview Scheduler
 
+
+## Overview
+
+Interview Scheduler is a fullstack application that provides users ability to manage interviews!
+
+## Screenshots
+
+![home](docs/2.png)
+![days](docs/3.png)
+![add](docs/4.png)
+![error](docs/1.png)
+![edit](docs/5.png)
+![delete](docs/6.png)
+
 ## Setup
 
 Install dependencies with `npm install`.
