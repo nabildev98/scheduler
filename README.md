@@ -10,7 +10,6 @@ Interview Scheduler is a fullstack application that provides users ability to ma
 ![home](docs/2.png)
 ![days](docs/3.png)
 ![add](docs/4.png)
-![error](docs/1.png)
 ![edit](docs/5.png)
 ![delete](docs/6.png)
 
