@@ -1,17 +1,18 @@
 import { render, cleanup, waitForElement, fireEvent, getByText, getAllByTestId, getByAltText, getByPlaceholderText, queryByText, queryByAltText } from "@testing-library/react";
 import React from "react";
-import axios from "__mocks__/axios";
+import axios from "axios";
 import Application from "components/Application";
 afterEach(cleanup);
 
 describe("Application", () => {
 
   it("changes the schedule when a new day is selected", async () => {
-    const { getByText } = render(<Application />)
+    const { getByText, debug } = render(<Application />)
 
     await waitForElement(() => getByText("Monday"));
 
-    fireEvent.click(getByText("Tuesday"));
+    fireEvent.click(getByText("Tuesday"))
+    debug();
 
     expect(getByText("Leopold Silvers")).toBeInTheDocument();
   })
