@@ -28,31 +28,15 @@ export default function useApplicationData() {
       .catch((e) => console.log(e));
   }, []);
 
-  const updateSpots = (type) => {
-    let dayIndex = 0;
+  const updateSpots = (appointments) => {
+    const dayIndex = state.days.findIndex((d) => d.name === state.day);
 
-    if (state.day === "Monday") {
-      dayIndex = 0;
-    } else if (state.day === "Tuesday") {
-      dayIndex = 1;
-    } else if (state.day === "Wednesday") {
-      dayIndex = 2;
-    } else if (state.day === "Thursday") {
-      dayIndex = 3;
-    } else if (state.day === "Friday") {
-      dayIndex = 4;
-    }
-
-    let numOfSpots = -1;
+    let numOfSpots = 0;
 
     for (const appmt of state.days[dayIndex].appointments) {
-      if (!state.appointments[appmt].interview) {
+      if (!appointments[appmt].interview) {
         numOfSpots++;
       }
-    }
-
-    if (type === "delete") {
-      numOfSpots += 2;
     }
 
     const modifiedDaysArray = [...state.days];
@@ -72,7 +56,7 @@ export default function useApplicationData() {
     };
 
     return axios.put(`/api/appointments/${id}`, appointment).then((res) => {
-      const modifiedDaysArray = updateSpots();
+      const modifiedDaysArray = updateSpots(appointments);
 
       setState({
         ...state,
@@ -98,7 +82,7 @@ export default function useApplicationData() {
     return axios.delete(`/api/appointments/${id}`).then((res) => {
       console.log("axios delete res:", res);
 
-      const modifiedDaysArray = updateSpots("delete");
+      const modifiedDaysArray = updateSpots(appointments);
 
       setState({
         ...state,
